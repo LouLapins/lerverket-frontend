@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react";
 import { ItemModel } from "../models/ItemModel";
 
-// interface ITimeSlotsProps {
-//     timeSlots(time: number): void;
-//     availability: {
-//       slot1: boolean;
-//       slot2: boolean;
-//     };
-// }
-
 
 const useFetch = (url: string) => {
 
