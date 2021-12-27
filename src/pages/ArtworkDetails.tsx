@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function News() {
+export default function ArtworkDetails() {
     return (
         <div>
-            Nyheter
+            Details page!
         </div>
     )
 }
