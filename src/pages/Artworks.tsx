@@ -21,7 +21,7 @@ export default function Artworks() {
                     <h5>{item.attributes.title}</h5>
                     <p>{item.attributes.artist}</p>
                     <img src={baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt="alt-text" />
-                    <Link to={`/details/${item.id}`}>Read more</Link>
+                    <Link to={`/artworks/details/${item.id}`}>Read more</Link>
                 </div>
             ))}
         </div>
