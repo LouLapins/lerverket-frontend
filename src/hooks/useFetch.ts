@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { ItemModel } from "../models/ItemModel";
-
 
 const useFetch = (url: string) => {
 
-    const [data, setData] = useState<ItemModel[]>([]);
-    const [error, setError] = useState(null);
+    const production = process.env.NODE_ENV === "production";
+    const baseUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
+
+    const [data, setData] = useState<any>();
+    const [error, setError] = useState<any>();
     const [loading, setLoading] = useState(true);
 
     
@@ -14,22 +15,22 @@ const useFetch = (url: string) => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const res = await fetch(url);
+                const res = await fetch(baseUrl + url);
                 const json = await res.json();
                 setData(json);
                 setLoading(false);
 
-            } catch (error: any) {
+            } catch (error) {
                 setError(error);
                 console.log("error: " + error);
                 setLoading(false);
             }
         }
         fetchData();
-    }, [url])
+    }, [url, baseUrl])
 
     return {
-        loading, error, data
+        data, error, loading
     }
 }
 
