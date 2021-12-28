@@ -1,14 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import useFetch from '../hooks/useFetch'
+// import useFetch from '../hooks/useFetch'
 import IItem from '../interfaces/IItem';
+import { useQuery, gql } from '@apollo/client';
+
+const ITEMS = gql`
+    query GetItems {
+    items {
+      data {
+        id
+        attributes {
+          title
+        }
+      }
+    }
+  }
+`
 
 export default function Artworks() {
 
     const production = process.env.NODE_ENV === "production";
     const baseUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
     
-    const { loading, error, data } = useFetch('/api/items?populate=*');
+    const { loading, error, data } = useQuery(ITEMS);
+    // const { loading, error, data } = useFetch('/api/items?populate=*');
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error!</p>
@@ -16,11 +31,11 @@ export default function Artworks() {
     if (data) {
         return (
             <div>
-            {data.data.map((item: IItem) => (
+            {data.items.data.map((item: IItem) => (
                 <div key={item.id.toString()}>
                     <h5>{item.attributes.title}</h5>
-                    <p>{item.attributes.artist}</p>
-                    <img src={baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt="alt-text" />
+                    {/* <p>{item.attributes.artist}</p>
+                    <img src={baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt="alt-text" /> */}
                     <Link to={`/artworks/details/${item.id}`}>Read more</Link>
                 </div>
             ))}
