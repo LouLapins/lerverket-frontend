@@ -4,9 +4,9 @@ import Header from './components/Header';
 import About from './pages/About';
 import ArtworkDetails from './pages/ArtworkDetails';
 import Artworks from './pages/Artworks';
-import Contacts from './pages/Contacts';
 import Courses from './pages/Courses';
 import Landing from './pages/Landing';
+import Directions from './pages/Directions';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Landing/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/courses" element={<Courses/>}/>
-          <Route path="/contacts" element={<Contacts/>}/>
+          <Route path="/directions" element={<Directions/>}/>
           <Route path="/artworks" element={<Artworks/>}/>
           <Route path="/artworks/details/:id" element={<ArtworkDetails/>}/>
         </Routes>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Contacts() {
+export default function Directions() {
     return (
         <div>
             Hitta hit
