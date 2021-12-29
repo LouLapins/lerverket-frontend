@@ -1,13 +1,13 @@
 interface IItem {
-    "id": Number,
+    "id": number,
     "attributes": {
-      "title": String,
-      "artist": String,
-      "description": String,
-      "forSale": Boolean,
-      "createdAt": String,
-      "updateAt": String,
-      "publishedAt": String,
+      "title": string,
+      "artist": string,
+      "description": string,
+      "forSale": boolean,
+      "createdAt": string,
+      "updateAt": string,
+      "publishedAt": string,
       "coverImage": {
         "data": any
       },

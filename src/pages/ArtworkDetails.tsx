@@ -51,7 +51,7 @@ export default function ArtworkDetails() {
         <p>{data.item.data.attributes.artist}</p>
         <div>
             {data.item.data.attributes.images.data.map((image: IItemImage) => (
-                <div key={image.id.toString()}>
+                <div key={image.id}>
                     <img src={baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
                 </div>
             ))}

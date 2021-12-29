@@ -10,6 +10,7 @@ import Artworks from './pages/Artworks';
 import Courses from './pages/Courses';
 import Landing from './pages/Landing';
 import Directions from './pages/Directions';
+import Category from './pages/Category';
 
 //apollo client
 const client = new ApolloClient({
@@ -28,6 +29,7 @@ function App() {
             <Route path="/about" element={<About/>}/>
             <Route path="/courses" element={<Courses/>}/>
             <Route path="/directions" element={<Directions/>}/>
+            <Route path="/category/:id" element={<Category/>}/>
             <Route path="/artworks" element={<Artworks/>}/>
             <Route path="/artworks/details/:id" element={<ArtworkDetails/>}/>
           </Routes>

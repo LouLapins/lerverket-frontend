@@ -40,7 +40,7 @@ export default function Artworks() {
         return (
             <div>
             {data.items.data.map((item: IItem) => (
-                <div key={item.id.toString()}>
+                <div key={item.id}>
                     <h5>{item.attributes.title}</h5>
                     <p>{item.attributes.artist}</p>
                     <img src={baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
