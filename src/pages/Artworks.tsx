@@ -19,8 +19,8 @@ const ITEMS = gql`
 
 export default function Artworks() {
 
-    const production = process.env.NODE_ENV === "production";
-    const baseUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
+    // const production = process.env.NODE_ENV === "production";
+    // const baseUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
     
     const { loading, error, data } = useQuery(ITEMS);
     // const { loading, error, data } = useFetch('/api/items?populate=*');
