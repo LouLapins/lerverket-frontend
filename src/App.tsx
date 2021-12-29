@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 //page and layout imports
 import Header from './components/Header';
@@ -11,16 +10,10 @@ import Courses from './pages/Courses';
 import Landing from './pages/Landing';
 import Directions from './pages/Directions';
 
-//apollo client
-const client = new ApolloClient({
-  uri: 'http://localhost:1337/graphql',
-  cache: new InMemoryCache()
-})
 
 function App() {
   return (
     <Router>
-      <ApolloProvider client={client}>
         <div className="App">
           <Header/>
           <Routes>
@@ -32,7 +25,6 @@ function App() {
             <Route path="/artworks/details/:id" element={<ArtworkDetails/>}/>
           </Routes>
         </div>
-      </ApolloProvider>
     </Router>
   );
 }
