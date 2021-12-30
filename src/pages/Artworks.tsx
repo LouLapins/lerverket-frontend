@@ -38,6 +38,8 @@ export default function Artworks() {
 
     if (data) {
         return (
+            <>
+            <h1>Verk</h1>
             <div>
             {data.items.data.map((item: IItem) => (
                 <div key={item.id}>
@@ -48,6 +50,7 @@ export default function Artworks() {
                 </div>
             ))}
         </div>
+        </>
         )
     } else {
         return (

@@ -3,6 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import IArticle from '../interfaces/IArticle';
 import IItemImage from '../interfaces/IItemImage';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const CATEGORY = gql`
     query GetCategory($id: ID!) {
@@ -57,8 +58,8 @@ export default function Category() {
         <div>
             {data.category.data.attributes.articles.data.map((article: IArticle) => (
                 <div key={article.id}>
-                    <h5>{article.attributes.title}</h5>
-                    <p>{article.attributes.text}</p>
+                    <h2>{article.attributes.title}</h2>
+                    <ReactMarkdown>{article.attributes.text}</ReactMarkdown>
                     {article.attributes.images.data.map((image: IItemImage) => (
                         <div key={image.id}>
                             <img src={baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
