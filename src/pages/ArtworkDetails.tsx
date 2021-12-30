@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client';
-import IItemImage from '../interfaces/IItemImage';
+import ImageSlider from '../components/ImageSlider';
 
 const ITEM = gql`
 query GetItem($id: ID!) {
@@ -32,9 +32,6 @@ query GetItem($id: ID!) {
 
 export default function ArtworkDetails() {
 
-    const production = process.env.NODE_ENV === "production";
-    const baseUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
-
     const { id } = useParams();
 
     const { loading, error, data } = useQuery(ITEM, {
@@ -49,13 +46,7 @@ export default function ArtworkDetails() {
         <div>
         <h5>{data.item.data.attributes.title}</h5>
         <p>{data.item.data.attributes.artist}</p>
-        <div>
-            {data.item.data.attributes.images.data.map((image: IItemImage) => (
-                <div key={image.id}>
-                    <img src={baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
-                </div>
-            ))}
-        </div>
+        <ImageSlider images={data.item.data.attributes.images.data}></ImageSlider>
         </div>
     )
     
