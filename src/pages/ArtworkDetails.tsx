@@ -29,8 +29,11 @@ query GetItem($id: ID!) {
 }
 `
 
+interface ICategoryProps {
+    baseUrl: string;
+  }
 
-export default function ArtworkDetails() {
+export default function ArtworkDetails(props: ICategoryProps) {
 
     const { id } = useParams();
 
@@ -46,7 +49,7 @@ export default function ArtworkDetails() {
         <div>
         <h5>{data.item.data.attributes.title}</h5>
         <p>{data.item.data.attributes.artist}</p>
-        <ImageSlider images={data.item.data.attributes.images.data}></ImageSlider>
+        <ImageSlider baseUrl={props.baseUrl} images={data.item.data.attributes.images.data}></ImageSlider>
         </div>
     )
     

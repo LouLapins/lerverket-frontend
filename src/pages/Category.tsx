@@ -2,7 +2,6 @@ import React from 'react'
 import { useQuery, gql } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import IArticle from '../interfaces/IArticle';
-import IItemImage from '../interfaces/IItemImage';
 import ImageSlider from '../components/ImageSlider';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
@@ -37,11 +36,11 @@ const CATEGORY = gql`
     }
 `
 
+interface ICategoryProps {
+    baseUrl: string;
+  }
 
-export default function Category() {
-
-    const production = process.env.NODE_ENV === "production";
-    const baseUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
+export default function Category(props: ICategoryProps) {
 
     const { id } = useParams();
 
@@ -61,7 +60,7 @@ export default function Category() {
                 <div key={article.id}>
                     <h2>{article.attributes.title}</h2>
                     <ReactMarkdown>{article.attributes.text}</ReactMarkdown>
-                    <ImageSlider images={article.attributes.images.data}></ImageSlider>
+                    <ImageSlider baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSlider>
                 </div>
             ))}
         </div>

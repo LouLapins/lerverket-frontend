@@ -26,39 +26,31 @@ query GetItems {
   }
 `
 
-export default function Artworks() {
+interface IArtworksProps {
+  baseUrl: string;
+}
 
-    const production = process.env.NODE_ENV === "production";
-    const baseUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
+export default function Artworks(props: IArtworksProps) {
     
-    const { loading, error, data } = useQuery(ITEMS);
+  const { loading, error, data } = useQuery(ITEMS);
 
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>Error!</p>
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error!</p>
 
-    if (data) {
-        return (
-            <>
-            <h1>Verk</h1>
-            <div>
-            {data.items.data.map((item: IItem) => (
-                <div key={item.id}>
-                    <h5>{item.attributes.title}</h5>
-                    <p>{item.attributes.artist}</p>
-                    <img src={baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
-                    <Link to={`/artworks/details/${item.id}`}>Read more</Link>
-                </div>
-            ))}
-        </div>
-        </>
-        )
-    } else {
-        return (
-            <div>
-                <h2>Error message!</h2>
-            </div>
-        )
-    }
-
-
+  return (
+    <>
+    <h1>Verk</h1>
+    <div>
+    {data.items.data.map((item: IItem) => (
+      <div key={item.id}>
+          <h5>{item.attributes.title}</h5>
+          <p>{item.attributes.artist}</p>
+          <img src={props.baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
+          <Link to={`/artworks/details/${item.id}`}>Read more</Link>
+       </div>
+    ))}
+  </div>
+  </>
+  )
+    
 }

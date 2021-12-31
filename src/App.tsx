@@ -18,6 +18,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
+const production = process.env.NODE_ENV === "production";
+const currentUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
+
 function App() {
   return (
     <Router>
@@ -29,9 +32,9 @@ function App() {
             <Route path="/about" element={<About/>}/>
             <Route path="/courses" element={<Courses/>}/>
             <Route path="/directions" element={<Directions/>}/>
-            <Route path="/category/:id" element={<Category/>}/>
-            <Route path="/artworks" element={<Artworks/>}/>
-            <Route path="/artworks/details/:id" element={<ArtworkDetails/>}/>
+            <Route path="/category/:id" element={<Category baseUrl={currentUrl}/>}/>
+            <Route path="/artworks" element={<Artworks baseUrl={currentUrl}/>}/>
+            <Route path="/artworks/details/:id" element={<ArtworkDetails baseUrl={currentUrl}/>}/>
           </Routes>
         </div>
       </ApolloProvider>

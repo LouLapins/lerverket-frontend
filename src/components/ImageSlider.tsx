@@ -4,12 +4,10 @@ import IItemImage from '../interfaces/IItemImage';
 
 interface IImageSliderProps {
   images: IItemImage[];
+  baseUrl: string;
 }
 
 export default function ImageSlider(props: IImageSliderProps) {
-
-  const production = process.env.NODE_ENV === "production";
-  const baseUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
 
   const settings = {
     dots: true,
@@ -20,12 +18,11 @@ export default function ImageSlider(props: IImageSliderProps) {
     slidesToScroll: 1
  }
 
-
   return (
     <Slider {...settings}>
       {props.images.map((image: IItemImage) => (
         <div key={image.id}>
-          <img src={baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
+          <img src={props.baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
         </div>
       ))}
     </Slider>
