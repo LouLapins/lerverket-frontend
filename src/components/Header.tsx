@@ -31,7 +31,7 @@ export default function Header() {
             <Link to="/"><h1>Lerverket</h1></Link>
             <nav>
                 {data.categories.data.map((category: ICategory) => (
-                    <Link key={category.id} to={`/category/${category.id}`}>
+                    <Link key={category.id} to={`/categories/${category.attributes.slug}`}>
                         {category.attributes.name}
                     </Link>
                 ))}

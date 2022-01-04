@@ -6,8 +6,8 @@ import ImageSlider from '../components/ImageSlider';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const CATEGORY = gql`
-    query GetCategory($id: ID!) {
-        category(id: $id) {
+    query GetCategories($slug: StringFilterInput!) {
+        categories(filters: {slug: $slug}) {
             data {
                 id
                 attributes {
@@ -45,21 +45,22 @@ interface ICategoryProps {
 
 export default function Category(props: ICategoryProps) {
 
-    const { id } = useParams();
+    const { slug } = useParams();
 
     const { loading, error, data } = useQuery(CATEGORY, {
-        variables: { id: id }
+        variables: { "slug": {"eq": slug} }
     })
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error!</p>
-    console.log(data);
+    console.log(data.categories.data);
+
 
     return (
         <>
-        <h1>{data.category.data.attributes.name}</h1>
+        <h1>{data.categories.data[0].attributes.name}</h1>
         <div>
-            {data.category.data.attributes.articles.data.map((article: IArticle) => (
+            {data.categories.data[0].attributes.articles.data.map((article: IArticle) => (
                 <div key={article.id}>
                     <h2>{article.attributes.title}</h2>
                     <ReactMarkdown>{article.attributes.text}</ReactMarkdown>

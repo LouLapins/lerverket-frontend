@@ -27,7 +27,7 @@ function App() {
           <Header/>
           <Routes>
             <Route path="/" element={<Landing/>}/>
-            <Route path="/category/:id" element={<Category baseUrl={currentUrl}/>}/>
+            <Route path="/categories/:slug" element={<Category baseUrl={currentUrl}/>}/>
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/artworks" element={<Artworks baseUrl={currentUrl}/>}/>
             <Route path="/artworks/details/:id" element={<ArtworkDetails baseUrl={currentUrl}/>}/>
