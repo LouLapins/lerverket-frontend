@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Courses() {
+export default function Contact() {
     return (
         <div>
-            Kurser
+            Hitta hit
         </div>
     )
 }

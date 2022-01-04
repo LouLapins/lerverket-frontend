@@ -4,13 +4,11 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 //page and layout imports
 import Header from './components/Header';
-import About from './pages/About';
 import ArtworkDetails from './pages/ArtworkDetails';
 import Artworks from './pages/Artworks';
-import Courses from './pages/Courses';
 import Landing from './pages/Landing';
-import Directions from './pages/Directions';
 import Category from './pages/Category';
+import Contact from './pages/Contact';
 
 //apollo client
 const client = new ApolloClient({
@@ -29,10 +27,8 @@ function App() {
           <Header/>
           <Routes>
             <Route path="/" element={<Landing/>}/>
-            <Route path="/about" element={<About/>}/>
-            <Route path="/courses" element={<Courses/>}/>
-            <Route path="/directions" element={<Directions/>}/>
             <Route path="/category/:id" element={<Category baseUrl={currentUrl}/>}/>
+            <Route path="/contact" element={<Contact/>}/>
             <Route path="/artworks" element={<Artworks baseUrl={currentUrl}/>}/>
             <Route path="/artworks/details/:id" element={<ArtworkDetails baseUrl={currentUrl}/>}/>
           </Routes>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import IArticle from '../interfaces/IArticle';
 import ImageSlider from '../components/ImageSlider';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
@@ -18,6 +18,9 @@ const CATEGORY = gql`
                             attributes {
                                 title
                                 text
+                                slug
+                                buttonText
+                                buttonRoute
                                 images {
                                     data {
                                         id
@@ -60,6 +63,7 @@ export default function Category(props: ICategoryProps) {
                 <div key={article.id}>
                     <h2>{article.attributes.title}</h2>
                     <ReactMarkdown>{article.attributes.text}</ReactMarkdown>
+                    {article.attributes.buttonRoute ? <Link to={article.attributes.buttonRoute}>{article.attributes.buttonText}</Link> : null}
                     <ImageSlider baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSlider>
                 </div>
             ))}

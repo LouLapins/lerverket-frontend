@@ -10,6 +10,7 @@ const CATEGORIES = gql`
                 id
                 attributes {
                     name
+                    slug
                 }
             }
         }

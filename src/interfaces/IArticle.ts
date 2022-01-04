@@ -3,6 +3,9 @@ interface IArticle {
     "attributes": {
       "title": string,
       "text": string,
+      "slug": string,
+      "buttonText": string,
+      "buttonRoute": string,
       "images": {
         "data": any
       }
