@@ -64,7 +64,7 @@ export default function Category(props: ICategoryProps) {
                     <h2>{article.attributes.title}</h2>
                     <ReactMarkdown>{article.attributes.text}</ReactMarkdown>
                     {article.attributes.buttonRoute ? <Link to={article.attributes.buttonRoute}>{article.attributes.buttonText}</Link> : null}
-                    <ImageSlider baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSlider>
+                    {article.attributes.images ? <ImageSlider baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSlider> : null}
                 </div>
             ))}
         </div>
