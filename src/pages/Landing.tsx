@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { RiInstagramFill, RiFacebookCircleFill } from "react-icons/ri";
 
 export default function Landing() {
     return (
@@ -9,8 +10,8 @@ export default function Landing() {
             <Link to="/contact">Hitta hit</Link>
         </div>
         <div>
-            <Link to="/instagram">Instagram</Link>
-            <Link to="/facebook">Facebook</Link>
+            <Link to="/instagram"><RiInstagramFill/></Link>
+            <Link to="/facebook"><RiFacebookCircleFill/></Link>
         </div>
         </>
     )
