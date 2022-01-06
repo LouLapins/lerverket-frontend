@@ -9,6 +9,8 @@ import Artworks from './pages/Artworks';
 import Landing from './pages/Landing';
 import Category from './pages/Category';
 import Contact from './pages/Contact';
+import Instagram from './pages/Instagram';
+import Facebook from './pages/Facebook';
 
 //apollo client
 const client = new ApolloClient({
@@ -27,10 +29,12 @@ function App() {
           <Header/>
           <Routes>
             <Route path="/" element={<Landing/>}/>
-            <Route path="/categories/:slug" element={<Category baseUrl={currentUrl}/>}/>
+            <Route path="/:slug" element={<Category baseUrl={currentUrl}/>}/>
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/artworks" element={<Artworks baseUrl={currentUrl}/>}/>
-            <Route path="/artworks/details/:id" element={<ArtworkDetails baseUrl={currentUrl}/>}/>
+            <Route path="/artworks/:id" element={<ArtworkDetails baseUrl={currentUrl}/>}/>
+            <Route path="/instagram" element={<Instagram/>}/>
+            <Route path="/facebook" element={<Facebook/>}/>
           </Routes>
         </div>
       </ApolloProvider>
