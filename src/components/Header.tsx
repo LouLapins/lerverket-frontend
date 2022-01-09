@@ -28,14 +28,14 @@ export default function Header() {
 
     return (
         <div className="header">
-            <Link to="/"><h1>Lerverket</h1></Link>
-            <nav>
+            <Link to="/" className='lerverket__logo link'>Lerverket</Link>
+            <nav className='nav'>
                 {data.categories.data.map((category: ICategory) => (
-                    <Link key={category.id} to={`/${category.attributes.slug}`}>
+                    <Link className='nav__item link' key={category.id} to={`/${category.attributes.slug}`}>
                         {category.attributes.name}
                     </Link>
                 ))}
-                <Link to="/contact">Kontakt</Link>
+                <Link className='nav__item link' to="/contact">Kontakt</Link>
             </nav>
         </div>
     )

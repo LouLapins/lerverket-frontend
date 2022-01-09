@@ -1,1 +1,8 @@
-@import "./scss/utilities/base";
+@import './scss/utilities/variables';
+@import './scss/utilities/mixins';
+@import './scss/utilities/base';
+//COMPONENTS
+@import './scss/components/header';
+//PAGES
+@import './scss/pages/landing';
+@import './scss/pages/category'

@@ -2,6 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 *,
@@ -11,8 +12,27 @@ body {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: $text-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+    background-color: $header-background-color;
+}
+
+.link {
+    color: inherit;
+    background-color: inherit;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.direction-row {
+    @include flex-center(row);
+}
+
+.direction-column {
+    @include flex-center(column);
 }

@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    @include space-between(row);
+    padding: 2rem 5rem;
+    position: absolute;
+    color: $header-text-color;
+}
+
+.lerverket__logo {
+    font-family: $logo-font;
+    font-size: 45px;
+    color: $header-text-color;
+    text-transform: uppercase;
+}
+
+.nav {
+    @include space-between(row);
+    width: 50%;
+}
+
+.nav__item {
+    @include button-text;
+}

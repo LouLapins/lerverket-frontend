@@ -57,7 +57,7 @@ export default function Category(props: ICategoryProps) {
 
 
     return (
-        <>
+        <section className='category-page'>
         <h1>{data.categories.data[0].attributes.name}</h1>
         <div>
             {data.categories.data[0].attributes.articles.data.map((article: IArticle) => (
@@ -69,6 +69,6 @@ export default function Category(props: ICategoryProps) {
                 </div>
             ))}
         </div>
-        </>
+        </section>
     )
 }
