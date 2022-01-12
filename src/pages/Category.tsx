@@ -61,7 +61,7 @@ export default function Category(props: ICategoryProps) {
         <h1>{data.categories.data[0].attributes.name}</h1>
         <div>
             {data.categories.data[0].attributes.articles.data.map((article: IArticle) => (
-                <div key={article.id}>
+                <div key={article.id} id={article.attributes.slug}>
                     <h2>{article.attributes.title}</h2>
                     <ReactMarkdown>{article.attributes.text}</ReactMarkdown>
                     {article.attributes.buttonRoute ? <Link to={article.attributes.buttonRoute}>{article.attributes.buttonText}</Link> : null}

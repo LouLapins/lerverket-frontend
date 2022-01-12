@@ -46,7 +46,7 @@ export default function Artworks(props: IArtworksProps) {
           <h5>{item.attributes.title}</h5>
           <p>{item.attributes.artist}</p>
           <img src={props.baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
-          <Link to={`/artworks/${item.id}`}>Read more</Link>
+          <Link to={`/konst/${item.id}`}>Read more</Link>
        </div>
     ))}
   </div>

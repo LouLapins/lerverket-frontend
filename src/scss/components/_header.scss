@@ -13,6 +13,10 @@
     text-transform: uppercase;
 }
 
+.navbar--desktop {
+    display: none;
+}
+
 .nav {
     @include space-between(row);
     width: 50%;
@@ -21,3 +25,20 @@
 .nav__item {
     @include button-text;
 }
+
+//MEDIA QUERIES
+// Small devices (landscape phones, 576px and up)
+@media screen and(min-width: 576px) {}
+
+// Medium devices (tablets, 768px and up)
+@media screen and(min-width: 768px) {}
+
+// Large devices (desktops, 992px and up)
+@media screen and(min-width: 992px) {
+    .navbar--mobile {
+        display: none;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media screen and(min-width: 1200px) {}
