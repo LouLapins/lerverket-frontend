@@ -1,5 +1,5 @@
 interface IMessage {
-    "id": number,
+    "id": string,
     "attributes": {
       "name": string,
       "email": string,

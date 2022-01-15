@@ -1,5 +1,5 @@
 interface IItem {
-    "id": number,
+    "id": string,
     "attributes": {
       "title": string,
       "artist": string,

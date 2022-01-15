@@ -1,5 +1,5 @@
 interface ICategory {
-    "id": number,
+    "id": string,
     "attributes": {
       "name": string,
       "slug": string,

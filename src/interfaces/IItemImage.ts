@@ -1,5 +1,5 @@
 interface IItemImage {
-    "id": number,
+    "id": string,
     "attributes": {
       "alternativeText": string,
       "formats": any

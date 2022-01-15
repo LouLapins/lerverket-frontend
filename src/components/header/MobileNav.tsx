@@ -17,7 +17,7 @@ export default function MobileNav() {
     return (
         <div className='navbar--mobile'>
             {open ? closeIcon : menuIcon}
-            {open ? <NavLinks/> : null}
+            {open && <NavLinks/>}
         </div>
     )
 }

@@ -1,5 +1,6 @@
 .header {
     width: 100%;
+    height: $header-height;
     @include space-between(row);
     padding: 2rem 5rem;
     position: absolute;

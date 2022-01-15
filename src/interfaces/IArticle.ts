@@ -1,5 +1,5 @@
 interface IArticle {
-    "id": number,
+    "id": string,
     "attributes": {
       "title": string,
       "text": string,
