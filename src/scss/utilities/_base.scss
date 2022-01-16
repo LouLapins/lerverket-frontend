@@ -29,6 +29,10 @@ body {
     font-family: inherit;
 }
 
+.no-bullet {
+    list-style: none;
+}
+
 .direction-row {
     @include flex-center(row);
 }

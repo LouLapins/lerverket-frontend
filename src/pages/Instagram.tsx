@@ -3,7 +3,7 @@ import React from 'react'
 export default function Instagram() {
     return (
         <div>
-            Instagram
+            <h1>Instagram iframe here</h1>
         </div>
     )
 }

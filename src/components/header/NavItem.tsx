@@ -15,17 +15,15 @@ export default function NavItem(props: INavItemProps) {
         setCategoryClicked(!categoryClicked)
     } 
     
-    const downArrow = <MdKeyboardArrowDown/>
-    const upArrow = <MdKeyboardArrowUp/>
+    const downArrow = <MdKeyboardArrowDown className='dropdown-icon'/>
+    const upArrow = <MdKeyboardArrowUp className='dropdown-icon'/>
 
     return (
-        <li>
-            <button onClick={handleClick}>
-                {props.category.attributes.name}
-                {categoryClicked ? upArrow : downArrow}
+        <button onClick={handleClick} className='nav__item link'>
+            {props.category.attributes.name}
+            {categoryClicked ? upArrow : downArrow}
 
-                {categoryClicked && <DropdownMenu category={props.category}/>}
-            </button>
-        </li>
+            {categoryClicked && <DropdownMenu category={props.category}/>}
+        </button>
     )
 }

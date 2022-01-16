@@ -12,10 +12,10 @@ interface IDropdownMenuProps {
 export default function DropdownMenu(props: IDropdownMenuProps) {
 
     return (
-        <ul>
-            {props.category.id === "5" && <li><Link to="/konst">Konst</Link></li>}
+        <ul className='nav__dropdown no-bullet'>
+            {props.category.id === "5" && <li><Link className='dropdown__item link' to="/konst">Konst</Link></li>}
             {props.category.attributes.articles.data.map((article: IArticle) => (
-                <li key={article.id}><HashLink to={`/${props.category.attributes.slug}#${article.attributes.slug}`}>{article.attributes.title}</HashLink></li>
+                <li key={article.id}><HashLink className='dropdown__item link' to={`/${props.category.attributes.slug}#${article.attributes.slug}`}>{article.attributes.title}</HashLink></li>
             ))}
         </ul>
     )

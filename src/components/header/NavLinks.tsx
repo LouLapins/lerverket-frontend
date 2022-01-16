@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import ICategory from '../../interfaces/ICategory'
 import NavItem from './NavItem'
+import { FaFacebookF, FaInstagram } from 'react-icons/fa'
 
 
 const CATEGORIES = gql`
@@ -36,12 +37,16 @@ export default function NavLinks() {
     if (error) return <p>Error!</p>
     
     return (
-        <ul>
+        <div className='navmenu--mobile'>
             {data.categories.data.map((category: ICategory) => (
                 <NavItem key={category.id} category={category}/>
             ))}
             <Link className='nav__item link' to="/kontakt">Kontakt</Link>
-        </ul>   
+            <div className='socials__wrapper--mobile'>
+            <Link className='socials--mobile link' to="/facebook"><FaFacebookF/></Link>
+            <Link className='socials--mobile link' to="/instagram"><FaInstagram/></Link>
+            </div>
+        </div>   
     )
 }
 
