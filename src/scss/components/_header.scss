@@ -37,6 +37,9 @@
     left: 0;
     margin: 0;
     padding: 10rem 0 0 5rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .nav__item {

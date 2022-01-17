@@ -8,8 +8,8 @@ export default function Landing() {
         <section className='landing-page'>
         <div className='action-button__wrapper'>
             <h1 className='landing__headline'>Lär dig keramik &amp; skulptur</h1>
-            <Link className='action-button link' to="/artworks"> <MdOutlineArrowForwardIos className='action-button__arrow'/>Se verk  </Link>
-            <Link className='action-button link' to="/contact"> <MdOutlineArrowForwardIos className='action-button__arrow'/>Hitta hit</Link>
+            <Link className='action-button link' to="/konst"> <MdOutlineArrowForwardIos className='action-button__arrow'/>Se verk  </Link>
+            <Link className='action-button link' to="/kontakt"> <MdOutlineArrowForwardIos className='action-button__arrow'/>Hitta hit</Link>
         </div>
         <div>
             <Link className='socials--desktop' to="/instagram"><RiInstagramFill/></Link>
