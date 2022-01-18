@@ -14,6 +14,7 @@ query GetItems {
           year
           coverImage {
             data {
+              id
               attributes {
                   alternativeText
                   formats

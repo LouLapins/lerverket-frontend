@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client';
-import ImageSlider from '../components/ImageSlider';
+import ImageSwiper from '../components/ImageSwiper';
 
 const ITEM = gql`
 query GetItem($id: ID!) {
@@ -13,7 +13,7 @@ query GetItem($id: ID!) {
                 artist
                 description
                 forSale
-                publishedAt
+                year
                 images {
                     data {
                         id
@@ -47,9 +47,12 @@ export default function ArtworkDetails(props: IArtworkDetailsProps) {
     return (
         <section className='artworks-detail-page'>
         <div className='details__wrapper'>
-        <h5>{data.item.data.attributes.title}</h5>
-        <p>{data.item.data.attributes.artist}</p>
-        <ImageSlider baseUrl={props.baseUrl} images={data.item.data.attributes.images.data}></ImageSlider>
+        <ImageSwiper baseUrl={props.baseUrl} images={data.item.data.attributes.images.data}></ImageSwiper>
+        <span>{data.item.data.attributes.artist}</span>
+        <p>{data.item.data.attributes.title}, {data.item.data.attributes.year}</p>
+        <p>{data.item.data.attributes.description}</p>
+        {data.item.data.attributes.price ? <p>{data.item.data.attributes.price}</p> : <p>Pris vid förfrågan.</p>}
+        {data.item.data.attributes.forSale === false && <p>SÅLD</p>}
         </div>
         </section>
     )
