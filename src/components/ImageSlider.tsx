@@ -15,10 +15,13 @@ export default function ImageSlider(props: IImageSliderProps) {
     infinite: true,
     speed: 900,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    centerMode: true,
+    className: "center"
  }
 
   return (
+    <div className='image-slider-container'>
     <Slider {...settings}>
       {props.images.map((image: IItemImage) => (
         <div key={image.id}>
@@ -26,6 +29,7 @@ export default function ImageSlider(props: IImageSliderProps) {
         </div>
       ))}
     </Slider>
+    </div>
   )
 }
 

@@ -11,7 +11,7 @@ query GetItems {
         attributes {
           title
           artist
-          publishedAt
+          year
           coverImage {
             data {
               attributes {
@@ -38,19 +38,19 @@ export default function Artworks(props: IArtworksProps) {
   if (error) return <p>Error!</p>
 
   return (
-    <>
-    <h1>Verk</h1>
+    <section className='page'>
+    <h1 className='heading--big'>Konst</h1>
     <div>
     {data.items.data.map((item: IItem) => (
-      <div key={item.id}>
-          <h5>{item.attributes.title}</h5>
-          <p>{item.attributes.artist}</p>
-          <img src={props.baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
-          <Link to={`/konst/${item.id}`}>Read more</Link>
+      <div  key={item.id}>
+      <Link className='item-card link' to={`/konst/${item.id}`}>
+          <img className='item-card__image' src={props.baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
+          <p><strong>{item.attributes.title}</strong>, {item.attributes.artist}, {item.attributes.year}</p>
+       </Link>
        </div>
     ))}
   </div>
-  </>
+  </section>
   )
     
 }

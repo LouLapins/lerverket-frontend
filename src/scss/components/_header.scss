@@ -3,7 +3,7 @@
     color: $header-text-color;
     z-index: 1;
     @include space-between(row);
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .lerverket__logo {
@@ -40,6 +40,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .nav__item {

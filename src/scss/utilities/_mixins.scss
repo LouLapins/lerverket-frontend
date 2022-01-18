@@ -1,5 +1,36 @@
+// MEDIA QUERIES
+// Small devices (landscape phones, 576px and up)
+@mixin s-screen {
+    @media screen and(min-width: 576px) {
+        @content;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin m-screen {
+    @media screen and(min-width: 768px) {
+        @content;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin l-screen {
+    @media screen and(min-width: 992px) {
+        @content;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@mixin xl-screen {
+    @media screen and(min-width: 1200px) {
+        @content;
+    }
+}
+
+// STYLES
 @mixin button-text {
     font-size: 18px;
+    font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
 }

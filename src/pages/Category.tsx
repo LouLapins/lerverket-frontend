@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import IArticle from '../interfaces/IArticle';
 import ImageSlider from '../components/ImageSlider';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { MdOutlineArrowForwardIos } from 'react-icons/md';
 
 const CATEGORY = gql`
     query GetCategories($slug: StringFilterInput!) {
@@ -53,19 +54,17 @@ export default function Category(props: ICategoryProps) {
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error!</p>
-    console.log(data.categories.data);
-
 
     return (
-        <section className='category-page'>
-        <h1>{data.categories.data[0].attributes.name}</h1>
+        <section className='page'>
+        <h1 className='heading--big'>{data.categories.data[0].attributes.name}</h1>
         <div>
             {data.categories.data[0].attributes.articles.data.map((article: IArticle) => (
                 <div key={article.id} id={article.attributes.slug}>
-                    <h2>{article.attributes.title}</h2>
+                    <h2 className='heading--medium'>{article.attributes.title}</h2>
                     <ReactMarkdown>{article.attributes.text}</ReactMarkdown>
-                    {article.attributes.buttonRoute ? <Link to={article.attributes.buttonRoute}>{article.attributes.buttonText}</Link> : null}
-                    {article.attributes.images ? <ImageSlider baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSlider> : null}
+                    {article.attributes.buttonRoute && <Link className='action-button link' to={article.attributes.buttonRoute}><MdOutlineArrowForwardIos className='action-button__arrow'/>{article.attributes.buttonText}</Link>}
+                    {article.attributes.images && <ImageSlider baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSlider>}
                 </div>
             ))}
         </div>

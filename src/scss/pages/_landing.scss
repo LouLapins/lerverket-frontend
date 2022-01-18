@@ -27,7 +27,7 @@
 
 .action-button {
     @include button-text;
-    border: 1px solid white;
+    border: 1px solid currentColor;
     width: 220px;
     height: 70px;
     display: flex;

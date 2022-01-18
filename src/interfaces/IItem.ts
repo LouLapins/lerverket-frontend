@@ -5,9 +5,8 @@ interface IItem {
       "artist": string,
       "description": string,
       "forSale": boolean,
-      "createdAt": string,
-      "updateAt": string,
-      "publishedAt": string,
+      "year": string,
+      "price": string,
       "coverImage": {
         "data": any
       },

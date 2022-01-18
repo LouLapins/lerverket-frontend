@@ -29,11 +29,11 @@ query GetItem($id: ID!) {
 }
 `
 
-interface ICategoryProps {
+interface IArtworkDetailsProps {
     baseUrl: string;
   }
 
-export default function ArtworkDetails(props: ICategoryProps) {
+export default function ArtworkDetails(props: IArtworkDetailsProps) {
 
     const { id } = useParams();
 
@@ -43,14 +43,15 @@ export default function ArtworkDetails(props: ICategoryProps) {
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error!</p>
-    console.log(data);
 
     return (
-        <div>
+        <section className='artworks-detail-page'>
+        <div className='details__wrapper'>
         <h5>{data.item.data.attributes.title}</h5>
         <p>{data.item.data.attributes.artist}</p>
         <ImageSlider baseUrl={props.baseUrl} images={data.item.data.attributes.images.data}></ImageSlider>
         </div>
+        </section>
     )
     
 }

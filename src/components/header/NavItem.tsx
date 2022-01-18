@@ -21,10 +21,10 @@ export default function NavItem(props: INavItemProps) {
     const categoryLink = <Link className='nav__item link' to={`/${props.category.attributes.slug}`}>{props.category.attributes.name}</Link>
 
     return (
-    <button className='nav__item link' onClick={handleClick}>
-        {categoryClicked ? categoryLink : props.category.attributes.name}
-        {categoryClicked ? upArrow : downArrow}
-        {categoryClicked && <DropdownMenu category={props.category}/>}
-    </button>
+        <button className='nav__item link' onClick={handleClick}>
+            {categoryClicked ? categoryLink : props.category.attributes.name}
+            {categoryClicked ? upArrow : downArrow}
+            {categoryClicked && <DropdownMenu category={props.category}/>}
+        </button>
     )
 }
