@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 import ICategory from '../../interfaces/ICategory'
 import NavItem from './NavItem'
-import { FaFacebookF } from 'react-icons/fa'
-import { BsInstagram } from 'react-icons/bs'
+import SocialLinks from '../SocialLinks'
 
 
 const CATEGORIES = gql`
@@ -44,8 +43,7 @@ export default function NavLinks() {
             ))}
             <Link className='nav__item link' to="/kontakt">Kontakt</Link>
             <div className='socials__wrapper--mobile'>
-            <Link className='socials--mobile link' to="/facebook"><FaFacebookF/></Link>
-            <Link className='socials--mobile link' to="/instagram"><BsInstagram/></Link>
+            <SocialLinks/>
             </div>
         </div>   
     )

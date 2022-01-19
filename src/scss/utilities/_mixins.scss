@@ -27,17 +27,7 @@
     }
 }
 
-// STYLES
-@mixin button-text {
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    @include s-screen {
-        font-size: 18px;
-    }
-}
-
+//FlEX
 @mixin space-between($direction) {
     display: flex;
     justify-content: space-between;
@@ -50,4 +40,28 @@
     align-items: center;
     justify-content: center;
     flex-direction: $direction;
+}
+
+// STYLES
+@mixin button-text {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    @include s-screen {
+        font-size: 18px;
+    }
+}
+
+@mixin action-button-style {
+    @include button-text;
+    border: 1px solid currentColor;
+    width: 220px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    .action-button__arrow {
+        font-size: 20px;
+        margin: 0 2rem;
+    }
 }

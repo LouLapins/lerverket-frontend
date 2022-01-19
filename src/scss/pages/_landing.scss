@@ -40,19 +40,9 @@
 }
 
 .action-button {
-    @include button-text;
-    border: 1px solid currentColor;
+    @include action-button-style;
     background-color: rgba(0, 0, 0, 0.3);
-    width: 220px;
-    height: 70px;
-    display: flex;
-    align-items: center;
     margin-top: 3rem;
-}
-
-.action-button__arrow {
-    font-size: 20px;
-    margin: 0 2rem;
 }
 
 .socials--desktop {

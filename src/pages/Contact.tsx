@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import SocialLinks from '../components/SocialLinks';
 
 const CONTACT = gql`
 query GetContact {
@@ -28,6 +29,9 @@ export default function Contact() {
         <div className='contact__wrapper'>
         <h1 className='heading--big'>{data.contact.data.attributes.title}</h1>
         <ReactMarkdown>{data.contact.data.attributes.details}</ReactMarkdown>
+        <div className='contact__socials'>
+        <SocialLinks/>
+        </div>
         </div>
         </section>
     )

@@ -64,7 +64,7 @@ export default function Category(props: ICategoryProps) {
                 <div key={article.id} id={article.attributes.slug}>
                     <h2 className='heading--medium'>{article.attributes.title}</h2>
                     <ReactMarkdown>{article.attributes.text}</ReactMarkdown>
-                    {article.attributes.buttonRoute && <Link className='action-button link' to={article.attributes.buttonRoute}>
+                    {article.attributes.buttonRoute && <Link className='article__button link' to={article.attributes.buttonRoute}>
                         <MdOutlineArrowForwardIos className='action-button__arrow'/>{article.attributes.buttonText}</Link>}
                     {article.attributes.images.data.length >= 1 && 
                     <ImageSwiper baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSwiper>}
