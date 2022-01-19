@@ -1,25 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+//page and layout imports
+import Header from './components/header/Header';
+import ArtworkDetails from './pages/ArtworkDetails';
+import Artworks from './pages/Artworks';
+import Landing from './pages/Landing';
+import Category from './pages/Category';
+import Contact from './pages/Contact';
+import Instagram from './pages/Instagram';
+import Facebook from './pages/Facebook';
+
+//apollo client
+const client = new ApolloClient({
+  uri: 'http://localhost:1337/graphql',
+  cache: new InMemoryCache()
+})
+
+const production = process.env.NODE_ENV === "production";
+const currentUrl = production ? "https://www.yoursite.com" : "http://localhost:1337";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ApolloProvider client={client}>
+        <div className="App">
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Landing/>}/>
+            <Route path="/:slug" element={<Category baseUrl={currentUrl}/>}/>
+            <Route path="/kontakt" element={<Contact/>}/>
+            <Route path="/konst" element={<Artworks baseUrl={currentUrl}/>}/>
+            <Route path="/konst/:id" element={<ArtworkDetails baseUrl={currentUrl}/>}/>
+            <Route path="/instagram" element={<Instagram/>}/>
+            <Route path="/facebook" element={<Facebook/>}/>
+          </Routes>
+        </div>
+      </ApolloProvider>
+    </Router>
   );
 }
 

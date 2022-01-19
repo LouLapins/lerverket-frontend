@@ -1,0 +1,13 @@
+@import './scss/utilities/variables';
+@import './scss/utilities/mixins';
+@import './scss/utilities/base';
+//COMPONENTS
+@import './scss/components/header';
+@import './scss/components/imageswiper';
+@import './scss/components/sociallinks';
+//PAGES
+@import './scss/pages/landing';
+@import './scss/pages/category';
+@import './scss/pages/artworks';
+@import './scss/pages/artworkdetails';
+@import './scss/pages/contact';

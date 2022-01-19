@@ -1,0 +1,53 @@
+.landing-page {
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    background-image: url(../../assets/landing-small.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include l-screen {
+        background-image: url(../../assets/landing-big.jpg);
+    }
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100vw;
+    height: 100vh;
+    @include flex-center(column);
+}
+
+.landing__headline {
+    font-family: $heading-font;
+    font-size: 40px;
+    font-weight: 400;
+    width: 70%;
+    line-height: 1.5;
+    text-align: center;
+    @include l-screen {
+        font-size: 80px;
+        width: 550px;
+    }
+}
+
+.action-button__wrapper {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.action-button {
+    @include action-button-style;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 3rem;
+}
+
+.socials--desktop {
+    display: none;
+    @include l-screen {
+        display: block;
+    }
+}

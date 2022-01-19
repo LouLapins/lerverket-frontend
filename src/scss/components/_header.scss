@@ -1,0 +1,87 @@
+.header {
+    width: 100%;
+    height: $header-height;
+    color: $header-text-color;
+    @include space-between(row);
+    padding: 1.5rem;
+    position: absolute;
+}
+
+.lerverket__logo {
+    font-family: $logo-font;
+    font-size: 24px;
+    color: $header-text-color;
+    text-transform: uppercase;
+}
+
+.menu-icon {
+    border: none;
+    padding: 0;
+    font-size: 30px;
+    color: white;
+    position: relative;
+    background: none;
+    z-index: 40;
+}
+
+.navbar--mobile {
+    z-index: 20;
+    @include l-screen {
+        display: none;
+    }
+}
+
+.navbar--desktop {
+    display: none;
+    @include l-screen {
+        display: block;
+    }
+}
+
+.navmenu--mobile {
+    position: fixed;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 25% 0 0 20%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-y: scroll;
+    z-index: 30;
+}
+
+.nav__item {
+    @include button-text;
+    border: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 20%;
+    margin: 3px 0;
+}
+
+.nav__dropdown {
+    text-align: start;
+    padding: 0.5rem 0;
+    margin: 0;
+}
+
+.dropdown__item {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.socials__wrapper--mobile {
+    position: fixed;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+}

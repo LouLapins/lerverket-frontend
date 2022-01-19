@@ -1,0 +1,67 @@
+// MEDIA QUERIES
+// Small devices (landscape phones, 576px and up)
+@mixin s-screen {
+    @media screen and(min-width: 576px) {
+        @content;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin m-screen {
+    @media screen and(min-width: 768px) {
+        @content;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin l-screen {
+    @media screen and(min-width: 992px) {
+        @content;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@mixin xl-screen {
+    @media screen and(min-width: 1200px) {
+        @content;
+    }
+}
+
+//FlEX
+@mixin space-between($direction) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin flex-center($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+// STYLES
+@mixin button-text {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    @include s-screen {
+        font-size: 18px;
+    }
+}
+
+@mixin action-button-style {
+    @include button-text;
+    border: 1px solid currentColor;
+    width: 220px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    .action-button__arrow {
+        font-size: 20px;
+        margin: 0 2rem;
+    }
+}
