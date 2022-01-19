@@ -37,7 +37,7 @@ export default function NavLinks() {
     if (error) return <p>Error!</p>
     
     return (
-        <div className='navmenu--mobile'>
+        <div className='nav__items__wrapper'>
             {data.categories.data.map((category: ICategory) => (
                 <NavItem key={category.id} category={category}/>
             ))}
