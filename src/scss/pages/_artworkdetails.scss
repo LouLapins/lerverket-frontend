@@ -7,3 +7,35 @@
 .details__wrapper {
     background-color: white;
 }
+
+.details__back__button {
+    z-index: 10;
+    background: none;
+    display: block;
+    padding: 1.5rem;
+    .details__back__icon {
+        margin-right: 1rem;
+        position: relative;
+        top: 3px;
+    }
+}
+
+.details__text {
+    width: 60%;
+    margin: 3rem auto;
+}
+
+.details__contacts__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.details__socials {
+    font-size: 20px;
+    margin-right: 2rem;
+}
+
+.details__contact__button {
+    @include button-text;
+}

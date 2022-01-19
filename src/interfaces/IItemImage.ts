@@ -2,7 +2,7 @@ interface IItemImage {
     "id": string,
     "attributes": {
       "alternativeText": string,
-      "formats": any
+      "url": string
     }
 }
 export default IItemImage

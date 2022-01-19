@@ -31,7 +31,7 @@ export default function ImageSwiper (props: IImageSwiperProps) {
       pagination={{ clickable: true }}>
       {props.images.map((image: IItemImage) => (
         <SwiperSlide key={image.id}>
-          <img src={props.baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
+          <img src={props.baseUrl + image.attributes.url} alt={image.attributes.alternativeText} />
         </SwiperSlide>
       ))}  
       </Swiper>
@@ -41,7 +41,7 @@ export default function ImageSwiper (props: IImageSwiperProps) {
       <Swiper slidesPerView={1} className="my-swiper">
       {props.images.map((image: IItemImage) => (
         <SwiperSlide key={image.id}>
-          <img src={props.baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
+          <img src={props.baseUrl + image.attributes.url} alt={image.attributes.alternativeText} />
         </SwiperSlide>
       ))}  
       </Swiper>

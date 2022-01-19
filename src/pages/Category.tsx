@@ -28,7 +28,7 @@ const CATEGORY = gql`
                                         id
                                         attributes {
                                             alternativeText
-                                            formats
+                                            url
                                         }
                                     }
                                 }
