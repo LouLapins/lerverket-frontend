@@ -19,13 +19,14 @@ interface IImageSwiperProps {
 
 export default function ImageSwiper (props: IImageSwiperProps) {
 
-  return (
-
-    <Swiper modules={[Navigation, Pagination, EffectFade]}
+  if (props.images.length > 1) {
+    return (
+      <Swiper modules={[Navigation, Pagination, EffectFade]}
       spaceBetween={30}
       slidesPerView={1}
       className="my-swiper"
       effect='fade'
+      loop={true}
       navigation
       pagination={{ clickable: true }}>
       {props.images.map((image: IItemImage) => (
@@ -33,7 +34,18 @@ export default function ImageSwiper (props: IImageSwiperProps) {
           <img src={props.baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
         </SwiperSlide>
       ))}  
-    </Swiper>
-
-  )
+      </Swiper>
+    )
+  } else {
+    return (
+      <Swiper slidesPerView={1} className="my-swiper">
+      {props.images.map((image: IItemImage) => (
+        <SwiperSlide key={image.id}>
+          <img src={props.baseUrl + image.attributes.formats.small.url} alt={image.attributes.alternativeText} />
+        </SwiperSlide>
+      ))}  
+      </Swiper>
+    )
+  }
+  
 }

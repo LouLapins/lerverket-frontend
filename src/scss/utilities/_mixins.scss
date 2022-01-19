@@ -29,10 +29,13 @@
 
 // STYLES
 @mixin button-text {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
+    @include s-screen {
+        font-size: 18px;
+    }
 }
 
 @mixin space-between($direction) {

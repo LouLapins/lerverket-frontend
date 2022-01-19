@@ -1,5 +1,7 @@
 .artwork-details-page {
     background-color: #F0F0F0;
+    position: relative;
+    top: $header-height;
 }
 
 .details__wrapper {

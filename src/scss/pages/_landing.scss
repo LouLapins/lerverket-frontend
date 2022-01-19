@@ -2,9 +2,19 @@
     width: 100vw;
     height: 100vh;
     color: white;
+    background-image: url(../../assets/landing-small.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include l-screen {
+        background-image: url(../../assets/landing-big.jpg);
+    }
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100vw;
+    height: 100vh;
     @include flex-center(column);
 }
 
@@ -15,23 +25,29 @@
     width: 70%;
     line-height: 1.5;
     text-align: center;
+    @include l-screen {
+        font-size: 80px;
+        width: 550px;
+    }
 }
 
 .action-button__wrapper {
-    height: 60%;
+    height: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     flex-direction: column;
 }
 
 .action-button {
     @include button-text;
     border: 1px solid currentColor;
+    background-color: rgba(0, 0, 0, 0.3);
     width: 220px;
     height: 70px;
     display: flex;
     align-items: center;
+    margin-top: 3rem;
 }
 
 .action-button__arrow {
@@ -41,25 +57,7 @@
 
 .socials--desktop {
     display: none;
-}
-
-//MEDIA QUERIES
-// Small devices (landscape phones, 576px and up)
-@media screen and(min-width: 576px) {}
-
-// Medium devices (tablets, 768px and up)
-@media screen and(min-width: 768px) {}
-
-// Large devices (desktops, 992px and up)
-@media screen and(min-width: 992px) {
-    .landing__headline {
-        font-size: 80px;
-        width: 550px;
-    }
-    .socials--desktop {
+    @include l-screen {
         display: block;
     }
 }
-
-// Extra large devices (large desktops, 1200px and up)
-@media screen and(min-width: 1200px) {}
