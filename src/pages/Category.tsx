@@ -57,7 +57,7 @@ export default function Category(props: ICategoryProps) {
     if (error) return <p>Error!</p>
 
     return (
-        <section className='page'>
+        <section className='article-page page'>
         <h1 className='heading--big'>{data.categories.data[0].attributes.name}</h1>
         <div>
             {data.categories.data[0].attributes.articles.data.map((article: IArticle) => (

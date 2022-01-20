@@ -1,8 +1,21 @@
+.artworks-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .item-card {
     margin: 3rem 0;
     @include flex-center(column);
+    @include l-screen {
+        width: 25%;
+        margin: 3rem 6rem 3rem 0;
+    }
 }
 
 .item-card__image {
     width: 75%;
+    @include l-screen {
+        width: 100%;
+    }
 }

@@ -8,6 +8,7 @@
     background-size: cover;
     @include l-screen {
         background-image: url(../../assets/landing-big.jpg);
+        background-position: top left;
     }
 }
 

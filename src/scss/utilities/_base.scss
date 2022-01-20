@@ -70,12 +70,17 @@ body {
     background-color: $background-color;
     padding: 1.5rem;
     @include l-screen {
-        background: linear-gradient(90deg, #FFFFFF 55%, #FAF7F7 45%);
-        padding: 100px;
         top: $header-height-l;
+        padding: 100px;
     }
     @include xl-screen {
         padding: 150px;
+    }
+}
+
+.article-page {
+    @include l-screen {
+        background: linear-gradient(90deg, #FFFFFF 55%, #FAF7F7 45%);
     }
 }
 
