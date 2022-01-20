@@ -1,3 +1,25 @@
+.article {
+    @include m-screen {
+        display: flex;
+        margin: 4rem 0;
+        justify-content: space-between;
+    }
+}
+
+.article__text {
+    @include m-screen {
+        width: 40%;
+    }
+}
+
+.article__image {
+    @include m-screen {
+        width: 35%;
+        height: 70%;
+        margin: auto 0;
+    }
+}
+
 .article__button {
     @include action-button-style;
     margin: 2.5rem 0;

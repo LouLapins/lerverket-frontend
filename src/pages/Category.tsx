@@ -61,13 +61,15 @@ export default function Category(props: ICategoryProps) {
         <h1 className='heading--big'>{data.categories.data[0].attributes.name}</h1>
         <div>
             {data.categories.data[0].attributes.articles.data.map((article: IArticle) => (
-                <div key={article.id} id={article.attributes.slug}>
+                <div className='article' key={article.id} id={article.attributes.slug}>
+                    <div className='article__text'>
                     <h2 className='heading--medium'>{article.attributes.title}</h2>
                     <ReactMarkdown>{article.attributes.text}</ReactMarkdown>
                     {article.attributes.buttonRoute && <Link className='article__button link' to={article.attributes.buttonRoute}>
                         <MdOutlineArrowForwardIos className='action-button__arrow'/>{article.attributes.buttonText}</Link>}
+                    </div>
                     {article.attributes.images.data.length >= 1 && 
-                    <ImageSwiper baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSwiper>}
+                    <div className='article__image'><ImageSwiper baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSwiper></div>}
                 </div>
             ))}
         </div>

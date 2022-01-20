@@ -17,6 +17,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
     font-weight: 300;
+    @include l-screen {
+        font-size: 18px;
+    }
 }
 
 .App {
@@ -49,7 +52,7 @@ body {
     font-weight: 200;
     font-size: 40px;
     @include l-screen {
-        font-size: 60px;
+        font-size: 70px;
     }
 }
 
@@ -67,7 +70,12 @@ body {
     background-color: $background-color;
     padding: 1.5rem;
     @include l-screen {
-        padding: 3rem;
+        background: linear-gradient(90deg, #FFFFFF 55%, #FAF7F7 45%);
+        padding: 100px;
+        top: $header-height-l;
+    }
+    @include xl-screen {
+        padding: 150px;
     }
 }
 

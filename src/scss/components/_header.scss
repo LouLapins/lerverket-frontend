@@ -5,6 +5,13 @@
     @include space-between(row);
     padding: 1.5rem;
     position: absolute;
+    @include l-screen {
+        height: $header-height-l;
+        padding: 50px 100px;
+    }
+    @include xl-screen {
+        padding: 50px 150px;
+    }
 }
 
 .lerverket__logo {
@@ -12,6 +19,9 @@
     font-size: 24px;
     color: $header-text-color;
     text-transform: uppercase;
+    @include l-screen {
+        font-size: 40px;
+    }
 }
 
 .navbar--mobile {

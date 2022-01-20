@@ -24,7 +24,7 @@ export default function ImageSwiper (props: IImageSwiperProps) {
       <Swiper modules={[Navigation, Pagination, EffectFade]}
       spaceBetween={30}
       slidesPerView={1}
-      className="my-swiper"
+      className="my-swiper--multiple-images"
       effect='fade'
       loop={true}
       navigation
@@ -38,7 +38,7 @@ export default function ImageSwiper (props: IImageSwiperProps) {
     )
   } else {
     return (
-      <Swiper slidesPerView={1} className="my-swiper">
+      <Swiper slidesPerView={1} className="my-swiper--single-image">
       {props.images.map((image: IItemImage) => (
         <SwiperSlide key={image.id}>
           <img src={props.baseUrl + image.attributes.url} alt={image.attributes.alternativeText} />
