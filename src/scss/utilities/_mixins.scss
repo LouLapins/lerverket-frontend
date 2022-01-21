@@ -64,4 +64,8 @@
         font-size: 20px;
         margin: 0 2rem;
     }
+    @include l-screen {
+        width: 250px;
+        height: 90px;
+    }
 }

@@ -12,12 +12,25 @@ query GetContact {
           details
           title
           slug
+          image {
+            data {
+              id
+              attributes {
+                url
+                alternativeText
+              }
+            }
+          }
         }
       }
     }
   }`
 
-export default function Contact() {
+interface IContactProps {
+  baseUrl: string;
+}
+
+export default function Contact(props: IContactProps) {
 
     const { loading, error, data } = useQuery(CONTACT);
 
@@ -25,14 +38,20 @@ export default function Contact() {
     if (error) return <p>Error!</p>
 
     return (
-        <section className='page'>
-        <div className='contact__wrapper'>
-        <h1 className='heading--big'>{data.contact.data.attributes.title}</h1>
-        <ReactMarkdown>{data.contact.data.attributes.details}</ReactMarkdown>
-        <div className='contact__socials'>
-        <SocialLinks/>
-        </div>
-        </div>
+        <section className='article-page page'>
+          <h1 className='heading--big'>{data.contact.data.attributes.title}</h1>
+          <div className='article'>
+            <div className='article__text'>
+              <ReactMarkdown>{data.contact.data.attributes.details}</ReactMarkdown>
+              <div className='contact__socials'>
+                <SocialLinks/>
+              </div>
+            </div>
+            <div className='article__image'>
+              <img src={props.baseUrl + data.contact.data.attributes.image.data.attributes.url} alt={data.contact.data.attributes.image.data.attributes.alternativeText} />
+            </div>
+          </div>
+
         </section>
     )
 }

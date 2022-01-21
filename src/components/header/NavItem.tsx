@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import ICategory from '../../interfaces/ICategory'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import DropdownMenu from './DropdownMenu';
+import { motion } from 'framer-motion'
 
 interface INavItemProps {
     category: ICategory
@@ -25,6 +26,9 @@ export default function NavItem(props: INavItemProps) {
     const handleHover = () => {
         setDropDownOpen(true)
     }
+
+    const animateFrom = {opacity: 0}
+    const animateTo = {opacity: 1}
     
     const downArrow = <MdKeyboardArrowDown className='dropdown-icon'/>
     const upArrow = <MdKeyboardArrowUp className='dropdown-icon'/>
@@ -35,7 +39,7 @@ export default function NavItem(props: INavItemProps) {
             {dropDownOpen ? categoryLink : props.category.attributes.name}
             {dropDownOpen ? upArrow : downArrow}
             {dropDownOpen && <DropdownMenu category={props.category}/>}
-            {dropDownOpen && <div className='nav__dropdown__background'></div>}
+            {dropDownOpen && <motion.div className='nav__dropdown__background' initial={animateFrom} animate={animateTo} transition={{delay: 0.10, type: 'tween', duration: .5}}></motion.div>}
         </button>
     )
 }

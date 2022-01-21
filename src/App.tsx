@@ -30,7 +30,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing/>}/>
             <Route path="/:slug" element={<Category baseUrl={currentUrl}/>}/>
-            <Route path="/kontakt" element={<Contact/>}/>
+            <Route path="/kontakt" element={<Contact baseUrl={currentUrl}/>}/>
             <Route path="/konst" element={<Artworks baseUrl={currentUrl}/>}/>
             <Route path="/konst/:id" element={<ArtworkDetails baseUrl={currentUrl}/>}/>
             <Route path="/instagram" element={<Instagram/>}/>

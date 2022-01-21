@@ -1,5 +1,5 @@
 .artwork-details-page {
-    background-color: #F0F0F0;
+    background-color: white;
     position: relative;
     top: $header-height;
     @include l-screen {
@@ -8,8 +8,7 @@
 }
 
 .details__wrapper {
-    background-color: white;
-    @include l-screen {
+    @include xl-screen {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
@@ -28,16 +27,16 @@
         position: relative;
         top: 3px;
     }
-    @include l-screen {
+    @include xl-screen {
         align-self: flex-start;
         position: relative;
-        right: 25px;
+        right: 70px;
     }
 }
 
 .details__image {
     width: 100%;
-    @include l-screen {
+    @include xl-screen {
         width: 560px;
         height: 660px;
         align-self: center;
@@ -47,7 +46,7 @@
 .details__text {
     width: 60%;
     margin: 3rem auto;
-    @include l-screen {
+    @include xl-screen {
         width: 25%;
         display: flex;
         align-items: flex-start;
@@ -61,7 +60,7 @@
     display: flex;
     justify-content: space-between;
     padding: 2rem 0;
-    @include l-screen {
+    @include xl-screen {
         padding: 0;
         margin-top: 5rem;
     }

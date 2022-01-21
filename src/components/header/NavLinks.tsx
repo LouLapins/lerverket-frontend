@@ -33,7 +33,11 @@ export default function NavLinks() {
 
     const { loading, error, data } = useQuery(CATEGORIES);
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return (
+        <div className='nav__items__wrapper'>
+        </div>   
+    )
+
     if (error) return <p>Error!</p>
     
     return (

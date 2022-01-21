@@ -19,6 +19,17 @@
     @include flex-center(column);
 }
 
+.center-content__wrapper {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    @include l-screen {
+        height: 70%;
+    }
+}
+
 .landing__headline {
     font-family: $heading-font;
     font-size: 40px;
@@ -33,22 +44,20 @@
 }
 
 .action-button__wrapper {
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-direction: column;
+    @include l-screen {
+        @include flex-center(row);
+    }
 }
 
 .action-button {
     @include action-button-style;
     background-color: rgba(0, 0, 0, 0.3);
     margin-top: 3rem;
+    @include l-screen {
+        margin: 1rem 2rem;
+    }
 }
 
 .socials--desktop {
     display: none;
-    @include l-screen {
-        display: block;
-    }
 }

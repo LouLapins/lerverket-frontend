@@ -1,26 +1,40 @@
+.article-page {
+    @include l-screen {
+        background: linear-gradient(90deg, #FFFFFF 55%, #FAF7F7 45%);
+    }
+}
+
 .article {
     @include m-screen {
         display: flex;
-        margin: 4rem 0;
+        margin: 2rem 0 4rem 0;
         justify-content: space-between;
     }
 }
 
 .article__text {
+    width: 100%;
     @include m-screen {
-        width: 40%;
+        width: 50%;
     }
 }
 
 .article__image {
+    width: 100%;
+    height: fit-content;
     @include m-screen {
-        width: 35%;
-        height: 70%;
+        width: 40%;
         margin: auto 0;
+    }
+    img {
+        width: 100%;
     }
 }
 
 .article__button {
     @include action-button-style;
     margin: 2.5rem 0;
+    @include l-screen {
+        margin-top: 5rem;
+    }
 }
