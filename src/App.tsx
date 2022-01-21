@@ -5,7 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 //page and layout imports
 import Header from './components/header/Header';
 import ArtworkDetails from './pages/ArtworkDetails';
-import Artworks from './pages/Artworks';
+import { Artworks } from './pages/Artworks';
 import Landing from './pages/Landing';
 import Category from './pages/Category';
 import Contact from './pages/Contact';

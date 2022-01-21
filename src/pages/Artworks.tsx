@@ -31,7 +31,7 @@ interface IArtworksProps {
   baseUrl: string;
 }
 
-export default function Artworks(props: IArtworksProps) {
+export function Artworks(props: IArtworksProps) {
     
   const { loading, error, data } = useQuery(ITEMS);
 
@@ -45,7 +45,7 @@ export default function Artworks(props: IArtworksProps) {
     {data.items.data.map((item: IItem) => (
       <Link key={item.id} className='item-card link' to={`/konst/${item.id}`}>
           <img className='item-card__image' src={props.baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
-          <p><strong>{item.attributes.title}</strong>, {item.attributes.artist}, {item.attributes.year}</p>
+          <p className='item-title'><strong>{item.attributes.title}</strong>, {item.attributes.artist}, {item.attributes.year}</p>
        </Link>
     ))}
   </div>

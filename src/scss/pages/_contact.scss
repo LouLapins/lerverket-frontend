@@ -4,3 +4,10 @@
         margin: 5rem 0;
     }
 }
+
+.contact-image {
+    width: 100%;
+    @include l-screen {
+        width: 40%;
+    }
+}

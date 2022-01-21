@@ -5,7 +5,7 @@
 }
 
 .item-card {
-    margin: 3rem 0;
+    margin-top: 3rem;
     @include flex-center(column);
     @include l-screen {
         width: 25%;

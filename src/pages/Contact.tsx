@@ -47,9 +47,7 @@ export default function Contact(props: IContactProps) {
                 <SocialLinks/>
               </div>
             </div>
-            <div className='article__image'>
-              <img src={props.baseUrl + data.contact.data.attributes.image.data.attributes.url} alt={data.contact.data.attributes.image.data.attributes.alternativeText} />
-            </div>
+              <img className='contact-image' src={props.baseUrl + data.contact.data.attributes.image.data.attributes.url} alt={data.contact.data.attributes.image.data.attributes.alternativeText} />
           </div>
 
         </section>
