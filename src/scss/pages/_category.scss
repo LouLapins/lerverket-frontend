@@ -1,6 +1,6 @@
 .article-page {
     @include l-screen {
-        background: linear-gradient(90deg, #FFFFFF 55%, #FAF7F7 45%);
+        background: linear-gradient(90deg, #FFFFFF 55%, $secondary-background-color 45%);
     }
 }
 
@@ -9,6 +9,7 @@
         display: flex;
         margin: 2rem 0 4rem 0;
         justify-content: space-between;
+        border: 1px solid black;
     }
 }
 
