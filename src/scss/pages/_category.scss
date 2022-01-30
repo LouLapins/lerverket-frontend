@@ -1,21 +1,32 @@
 .article-page {
+    @include page-settings;
     @include l-screen {
-        background: linear-gradient(90deg, #FFFFFF 55%, $secondary-background-color 45%);
+        background: linear-gradient(90deg, #FFFFFF 70%, $secondary-background-color 30%);
+    }
+}
+
+.article-page-heading {
+    padding: 1.5rem;
+    @include l-screen {
+        padding: 100px 100px 50px 100px;
     }
 }
 
 .article {
-    @include m-screen {
+    padding: 0 1.5rem;
+
+    @include l-screen {
         display: flex;
         margin: 2rem 0 4rem 0;
         justify-content: space-between;
-        border: 1px solid black;
+        position: relative;
+        padding: 0 100px 150px 100px;
     }
 }
 
 .article__text {
     width: 100%;
-    @include m-screen {
+    @include l-screen {
         width: 50%;
     }
 }
@@ -23,7 +34,7 @@
 .article__image {
     width: 100%;
     height: fit-content;
-    @include m-screen {
+    @include l-screen {
         width: 40%;
         margin: auto 0;
     }
@@ -35,4 +46,13 @@
     @include l-screen {
         margin-top: 5rem;
     }
+}
+
+.color-block {
+    width: 100%;
+    height: 100px;
+    background-color: $secondary-background-color;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }

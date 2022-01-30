@@ -57,8 +57,8 @@ export default function Category(props: ICategoryProps) {
     if (error) return <p>Error!</p>
 
     return (
-        <section className='article-page page'>
-        <h1 className='heading--big'>{data.categories.data[0].attributes.name}</h1>
+        <section className='article-page'>
+        <h1 className='article-page-heading heading--big'>{data.categories.data[0].attributes.name}</h1>
         <div>
             {data.categories.data[0].attributes.articles.data.map((article: IArticle) => (
                 <div className='article' key={article.id} id={article.attributes.slug}>
@@ -70,6 +70,7 @@ export default function Category(props: ICategoryProps) {
                     </div>
                     {article.attributes.images.data.length >= 1 && 
                     <div className='article__image'><ImageSwiper baseUrl={props.baseUrl} images={article.attributes.images.data}></ImageSwiper></div>}
+                    <div className='color-block'></div>
                 </div>
             ))}
         </div>
