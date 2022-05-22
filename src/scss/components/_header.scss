@@ -1,10 +1,11 @@
 .header {
     width: 100%;
     height: $header-height;
+    background-color: $header-background-color;
     color: $header-text-color;
     @include space-between(row);
     padding: 1.5rem;
-    position: absolute;
+    position: relative;
     @include l-screen {
         height: $header-height-l;
         padding: 50px 100px;

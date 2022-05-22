@@ -38,8 +38,8 @@ export default function Contact(props: IContactProps) {
     if (error) return <p>Error!</p>
 
     return (
-        <section className='article-page page'>
-          <h1 className='heading--big'>{data.contact.data.attributes.title}</h1>
+        <section className='article-page'>
+          <h1 className='article-page-heading heading--big'>{data.contact.data.attributes.title}</h1>
           <div className='article'>
             <div className='article__text'>
               <ReactMarkdown>{data.contact.data.attributes.details}</ReactMarkdown>
