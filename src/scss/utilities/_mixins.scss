@@ -48,7 +48,6 @@
     font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
-
 }
 
 @mixin action-button-style {
@@ -70,9 +69,5 @@
 
 @mixin page-settings {
     position: relative;
-    top: $header-height;
     background-color: $background-color;
-    @include l-screen {
-        top: $header-height-l;
-    }
 }

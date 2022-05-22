@@ -1,10 +1,6 @@
 .artwork-details-page {
     background-color: white;
     position: relative;
-    top: $header-height;
-    @include l-screen {
-        top: $header-height-l;
-    }
 }
 
 .details__wrapper {
