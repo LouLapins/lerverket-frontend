@@ -1,13 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { FaFacebookF } from 'react-icons/fa'
-import { BsInstagram } from 'react-icons/bs'
+import React from "react";
+import { FaFacebookF } from "react-icons/fa";
+import { BsInstagram } from "react-icons/bs";
 
 export default function SocialLinks() {
-    return (
-        <div>
-            <Link className='socials link' to='/facebook'><FaFacebookF/></Link>
-            <Link className='socials link' to='/instagram'><BsInstagram/></Link>
-        </div>
-    )
+  return (
+    <div>
+      <a
+        className="socials link"
+        href="https://www.facebook.com/LerverketStockholm/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FaFacebookF />
+      </a>
+      <a
+        className="socials link"
+        href="https://www.instagram.com/lerverket/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <BsInstagram />
+      </a>
+    </div>
+  );
 }
