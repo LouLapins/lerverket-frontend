@@ -15,12 +15,10 @@ export default function Landing() {
             </h1>
             <div className="action-button__wrapper">
               <Link className="action-button link" to="/konst">
-                {" "}
                 <MdOutlineArrowForwardIos className="action-button__arrow" />
                 Se verk
               </Link>
               <Link className="action-button link" to="/kontakt">
-                {" "}
                 <MdOutlineArrowForwardIos className="action-button__arrow" />
                 Hitta hit
               </Link>

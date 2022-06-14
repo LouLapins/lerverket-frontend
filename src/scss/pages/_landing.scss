@@ -16,16 +16,17 @@
     background-color: rgba(0, 0, 0, 0.65);
     width: 100vw;
     height: 100vh;
-    @include flex-center(column);
 }
 
 .center-content__wrapper {
+    padding-top: 20%;
     height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     @include l-screen {
+        padding-top: 15%;
         height: 70%;
     }
 }
@@ -51,7 +52,7 @@
 
 .action-button {
     @include action-button-style;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
     margin-top: 3rem;
     @include l-screen {
         margin: 1rem 2rem;
