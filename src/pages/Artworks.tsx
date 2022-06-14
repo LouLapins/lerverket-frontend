@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import IItem from '../interfaces/IItem';
 import { useQuery, gql } from '@apollo/client';
+import PageAnimation from "../components/PageAnimation";
+import Loader from "../components/Loader";
 
 const ITEMS = gql`
 query GetItems {
@@ -35,10 +37,11 @@ export function Artworks(props: IArtworksProps) {
     
   const { loading, error, data } = useQuery(ITEMS);
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loader />
   if (error) return <p>Error!</p>
 
   return (
+    <PageAnimation>
     <section className='page'>
     <h1 className='heading--big'>Konst</h1>
     <div className='artworks-wrapper'>
@@ -50,6 +53,7 @@ export function Artworks(props: IArtworksProps) {
     ))}
   </div>
   </section>
+  </PageAnimation>
   )
     
 }
