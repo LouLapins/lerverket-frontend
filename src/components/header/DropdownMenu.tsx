@@ -31,7 +31,7 @@ export default function DropdownMenu(props: IDropdownMenuProps) {
         <li key={article.id}>
           <HashLink
             className="dropdown__item link"
-            to={`/${props.category.attributes.slug}#${article.attributes.slug}`}
+            smooth to={`/${props.category.attributes.slug}#${article.attributes.slug}`}
           >
             {article.attributes.title}
           </HashLink>
