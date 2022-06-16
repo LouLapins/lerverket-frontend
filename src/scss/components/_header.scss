@@ -1,140 +1,145 @@
-.header {
-    width: 100%;
-    height: $header-height;
-    background-color: $header-background-color;
-    color: $header-text-color;
-    @include space-between(row);
-    padding: 1.5rem;
-    position: relative;
-    @include l-screen {
-        height: $header-height-l;
-        padding: 50px 100px;
-    }
-}
-
-.lerverket__logo {
-    font-family: $logo-font;
-    font-size: 24px;
-    color: $header-text-color;
-    text-transform: uppercase;
-    @include l-screen {
-        font-size: 40px;
-    }
-}
-
-.navbar--mobile {
-    z-index: 20;
-    @include l-screen {
-        display: none;
-    }
-}
-
-.menu-icon {
-    border: none;
-    padding: 0;
-    font-size: 30px;
-    color: white;
-    position: relative;
-    background: none;
-    z-index: 40;
-}
-
-.navmenu--mobile {
-    .nav__items__wrapper {
-        position: fixed;
-        background-color: black;
-        height: 100vh;
+    .header {
         width: 100%;
-        top: 0;
-        left: 0;
-        padding: 25% 0 0 20%;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        overflow-y: scroll;
-        z-index: 30;
+        height: $header-height;
+        background-color: $header-background-color;
+        color: $header-text-color;
+        @include space-between(row);
+        padding: 1.5rem;
+        position: relative;
+        @include l-screen {
+            height: $header-height-l;
+            padding: 50px 100px;
+        }
     }
-}
-
-.navbar--desktop {
-    display: none;
-    @include l-screen {
-        display: block;
+    
+    .lerverket__logo {
+        font-family: $logo-font;
+        font-size: 24px;
+        color: $header-text-color;
+        text-transform: uppercase;
+        @include l-screen {
+            font-size: 40px;
+        }
     }
-}
-
-.nav__item {
-    @include button-text;
-    border: none;
-    padding: 0;
-    margin-bottom: 2rem;
-    @include l-screen {
-        margin: 1rem 2rem;
-    }
-}
-
-.nav__item--open {
-    @include l-screen {
-        padding-bottom: $header-height-l;
-    }
-}
-
-.dropdown-icon {
-    position: absolute;
-    right: 20%;
-    margin: 3px 0;
-    @include l-screen {
-        right: initial;
-        margin: 3px 5px;
-    }
-}
-
-.nav__dropdown__background {
-    z-index: 10;
-    background-color: #f0ebe6d7;
-    width: 100%;
-    position: absolute;
-    height: 25vh;
-    top: 100%;
-    left: 0;
-}
-
-.nav__dropdown {
-    text-align: start;
-    padding: 0.5rem 0;
-    margin: 0;
-    @include l-screen {
-        background: none;
-        position: absolute;
+    
+    .navbar--mobile {
         z-index: 20;
-        padding: 1rem 0;
-        top: 100%;
+        @include l-screen {
+            display: none;
+        }
     }
-}
-
-.dropdown__item {
-    text-transform: capitalize;
-    letter-spacing: 1px;
-    font-size: 16px;
-    line-height: 1.5;
-    @include l-screen {
-        color: black;
-        line-height: 2;
+    
+    .menu-icon {
+        border: none;
+        padding: 0;
+        font-size: 30px;
+        color: white;
+        position: relative;
+        background: none;
+        top: 0;
+        right: 0;
+        z-index: 40;
     }
-}
-
-.dropdown__item:hover {
-    @include l-screen {
-        border-bottom: 1px solid black;
+    
+    .navmenu--mobile {
+        .nav__items__wrapper {
+            position: fixed;
+            background-color: black;
+            height: 100vh;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 25% 0 0 20%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 30;
+        }
     }
-}
-
-.socials__wrapper--mobile {
-    position: fixed;
-    bottom: 10%;
-    width: 100%;
-    text-align: center;
-    @include l-screen {
+    
+    .navbar--desktop {
         display: none;
+        @include l-screen {
+            display: block;
+        }
     }
-}
+    
+    .nav__item {
+        @include button-text;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 2rem;
+        @include l-screen {
+            margin: 1rem 2rem;
+            padding: 4rem 1rem;
+        }
+    }
+    
+    .dropdown-icon {
+        position: absolute;
+        right: 20%;
+        margin: 3px 0;
+        @include l-screen {
+            right: initial;
+            margin: 3px 5px;
+        }
+    }
+    
+    .nav__dropdown {
+        border: 1px solid green;
+        text-align: start;
+        padding: 0.5rem 0;
+        margin: 0;
+        height: initial;
+        @include l-screen {
+            position: absolute;
+            top: 100%;
+            background: none;
+            z-index: 40;
+            padding: 1rem 0;
+        }
+    }
+    
+    .nav__dropdown__background {
+        border: 1px solid red;
+        z-index: 30;
+        background-color: #4a4a4ad7;
+        @include l-screen {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100vw;
+            height: inherit;
+            padding-left: 1rem;
+            background-color: #f0ebe6d7;
+        }
+    }
+    
+    .dropdown__item {
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-size: 16px;
+        line-height: 1.5;
+        @include l-screen {
+            color: black;
+            line-height: 2;
+        }
+    }
+    
+    .dropdown__item:hover {
+        @include l-screen {
+            border-bottom: 1px solid black;
+        }
+    }
+    
+    .socials__wrapper--mobile {
+        position: fixed;
+        bottom: 10%;
+        width: 100%;
+        text-align: center;
+        @include l-screen {
+            display: none;
+        }
+    }

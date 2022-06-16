@@ -1,10 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-// import { AnimatePresence } from "framer-motion";
 
 //page and layout imports
-import Header from "./components/header/Header";
+import Header from "./components/navigation/Header";
 import ArtworkDetails from "./pages/ArtworkDetails";
 import { Artworks } from "./pages/Artworks";
 import Landing from "./pages/Landing";

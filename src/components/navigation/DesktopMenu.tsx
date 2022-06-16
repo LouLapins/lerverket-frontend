@@ -1,10 +1,10 @@
 import React from "react";
-import NavLinks from "./NavLinks";
+import NavData from "./NavData";
 
 export default function DesktopNav() {
   return (
     <div className="navbar--desktop">
-      <NavLinks />
+      <NavData />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import ICategory from "../../interfaces/ICategory";
-import NavItem from "./NavItem";
+import SubMenuHeading from "./SubMenuHeading";
 import SocialLinks from "../SocialLinks";
 
 const CATEGORIES = gql`
@@ -38,7 +38,7 @@ export default function NavLinks() {
   return (
     <div className="nav__items__wrapper">
       {data.categories.data.map((category: ICategory) => (
-        <NavItem key={category.id} category={category} />
+        <SubMenuHeading key={category.id} category={category} />
       ))}
       <Link className="nav__item link" to="/kontakt">
         Kontakt

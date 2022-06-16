@@ -10,15 +10,19 @@ interface IDropdownMenuProps {
 }
 
 export default function DropdownMenu(props: IDropdownMenuProps) {
-  const animateFrom = { opacity: 0, y: -50 };
-  const animateTo = { opacity: 1, y: 0 };
+  const bgAnimateFrom = { opacity: 0 };
+  const bgAnimateTo = { opacity: 1 };
+
+  const textAnimateFrom = { opacity: 0, y: -50 };
+  const textAnimateTo = { opacity: 1, y: 0 };
+  const transition = { delay: 0.1, type: "tween", duration: 0.5 };
 
   return (
     <motion.ul
       className="nav__dropdown no-bullet"
-      initial={animateFrom}
-      animate={animateTo}
-      transition={{ delay: 0.1, type: "tween", duration: 0.5 }}
+      initial={textAnimateFrom}
+      animate={textAnimateTo}
+      transition={transition}
     >
       {props.category.id === "5" && (
         <li>
@@ -31,12 +35,19 @@ export default function DropdownMenu(props: IDropdownMenuProps) {
         <li key={article.id}>
           <HashLink
             className="dropdown__item link"
-            smooth to={`/${props.category.attributes.slug}#${article.attributes.slug}`}
+            smooth
+            to={`/${props.category.attributes.slug}#${article.attributes.slug}`}
           >
             {article.attributes.title}
           </HashLink>
         </li>
       ))}
+      <motion.div
+        className="nav__dropdown__background"
+        initial={bgAnimateFrom}
+        animate={bgAnimateTo}
+        transition={transition}
+      ></motion.div>
     </motion.ul>
   );
 }
