@@ -18,36 +18,38 @@ export default function DropdownMenu(props: IDropdownMenuProps) {
   const transition = { delay: 0.1, type: "tween", duration: 0.5 };
 
   return (
-    <motion.ul
-      className="nav__dropdown no-bullet"
-      initial={textAnimateFrom}
-      animate={textAnimateTo}
-      transition={transition}
-    >
-      {props.category.id === "5" && (
-        <li>
-          <Link className="dropdown__item link" to="/konst">
-            Konst
-          </Link>
-        </li>
-      )}
-      {props.category.attributes.articles.data.map((article: IArticle) => (
-        <li key={article.id}>
-          <HashLink
-            className="dropdown__item link"
-            smooth
-            to={`/${props.category.attributes.slug}#${article.attributes.slug}`}
-          >
-            {article.attributes.title}
-          </HashLink>
-        </li>
-      ))}
+    <div className="nav__dropdown__parent">
+      <motion.ul
+        className="nav__dropdown no-bullet"
+        initial={textAnimateFrom}
+        animate={textAnimateTo}
+        transition={transition}
+      >
+        {props.category.id === "5" && (
+          <li>
+            <Link className="dropdown__item link" to="/konst">
+              Konst
+            </Link>
+          </li>
+        )}
+        {props.category.attributes.articles.data.map((article: IArticle) => (
+          <li key={article.id}>
+            <HashLink
+              className="dropdown__item link"
+              smooth
+              to={`/${props.category.attributes.slug}#${article.attributes.slug}`}
+            >
+              {article.attributes.title}
+            </HashLink>
+          </li>
+        ))}
+      </motion.ul>
       <motion.div
         className="nav__dropdown__background"
         initial={bgAnimateFrom}
         animate={bgAnimateTo}
         transition={transition}
       ></motion.div>
-    </motion.ul>
+    </div>
   );
 }

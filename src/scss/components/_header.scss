@@ -87,33 +87,39 @@
         }
     }
     
-    .nav__dropdown {
-        border: 1px solid green;
-        text-align: start;
-        padding: 0.5rem 0;
-        margin: 0;
-        height: initial;
-        @include l-screen {
-            position: absolute;
-            top: 100%;
-            background: none;
-            z-index: 40;
-            padding: 1rem 0;
-        }
+    .nav__dropdown__parent {
+        border: 1px solid yellow;
+        position: absolute;
+        top: 100%;
     }
     
     .nav__dropdown__background {
         border: 1px solid red;
-        z-index: 30;
+        z-index: 10;
         background-color: #4a4a4ad7;
         @include l-screen {
             position: absolute;
-            top: 100px;
+            top: 0;
             left: 0;
             width: 100vw;
-            height: inherit;
+            height: 100%;
             padding-left: 1rem;
             background-color: #f0ebe6d7;
+        }
+    }
+    
+    .nav__dropdown {
+        position: relative;
+        top: 100%;
+        border: 1px solid green;
+        text-align: start;
+        padding: 0.5rem 0;
+        margin: 0;
+        z-index: 20;
+        height: fit-content;
+        @include l-screen {
+            background: none;
+            padding: 1rem 0;
         }
     }
     

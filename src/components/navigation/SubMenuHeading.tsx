@@ -26,6 +26,7 @@ export default function NavItem(props: INavItemProps) {
   const categoryName = props.category.attributes.name;
 
   return (
+    <>
     <button
       className="nav__item link"
       ref={dropDown}
@@ -33,7 +34,8 @@ export default function NavItem(props: INavItemProps) {
     >
       {categoryName}
       {dropDownOpen ? upArrow : downArrow}
-      {dropDownOpen && <SubMenu category={props.category} />}
     </button>
+    {dropDownOpen && <SubMenu category={props.category}/>}
+    </>
   );
 }
