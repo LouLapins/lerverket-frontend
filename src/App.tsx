@@ -13,13 +13,13 @@ import Contact from "./pages/Contact";
 
 //apollo client
 const client = new ApolloClient({
-  uri: "http://localhost:1337/graphql",
+  uri: "https://lerverket.herokuapp.com/graphql",
   cache: new InMemoryCache(),
 });
 
 const production = process.env.NODE_ENV === "production";
 const currentUrl = production
-  ? "https://www.yoursite.com"
+  ? "https://lerverket.herokuapp.com"
   : "http://localhost:1337";
 
 function App() {
