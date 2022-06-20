@@ -57,12 +57,11 @@ a {
 }
 
 .heading--medium {
-    padding-top: 2rem;
     font-weight: 400;
     font-size: 24px;
     @include l-screen {
-        padding-top: 3rem;
         font-size: 30px;
+        margin-top: 3rem;
     }
 }
 

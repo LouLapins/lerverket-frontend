@@ -54,6 +54,10 @@
     @include action-button-style;
     background-color: rgba(0, 0, 0, 0.6);
     margin-top: 3rem;
+    &:hover {
+        color: black;
+        background-color: rgba(206, 190, 162, 0.6);
+    }
     @include l-screen {
         margin: 1rem 2rem;
     }
