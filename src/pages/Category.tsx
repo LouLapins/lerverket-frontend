@@ -43,11 +43,7 @@ const CATEGORY = gql`
   }
 `;
 
-interface ICategoryProps {
-  baseUrl: string;
-}
-
-export default function Category(props: ICategoryProps) {
+export default function Category() {
   const { slug } = useParams();
 
   const { loading, error, data } = useQuery(CATEGORY, {
@@ -89,7 +85,6 @@ export default function Category(props: ICategoryProps) {
                 {article.attributes.images.data.length >= 1 && (
                   <div className="article__image">
                     <ImageSwiper
-                      baseUrl={props.baseUrl}
                       images={article.attributes.images.data}
                     ></ImageSwiper>
                   </div>

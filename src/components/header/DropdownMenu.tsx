@@ -20,7 +20,7 @@ export default function DropdownMenu(props: IDropdownMenuProps) {
       animate={animateTo}
       transition={{ delay: 0.1, type: "tween", duration: 0.5 }}
     >
-      {props.category.id === "5" && (
+      {props.category.id === "1" && (
         <li>
           <Link className="dropdown__item link" to="/konst">
             Konst

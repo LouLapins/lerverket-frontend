@@ -13,7 +13,6 @@ SwiperCore.use([Navigation,Pagination,EffectFade]);
 
 interface IImageSwiperProps {
     images: IItemImage[];
-    baseUrl: string;
   }
   
 
@@ -31,7 +30,7 @@ export default function ImageSwiper (props: IImageSwiperProps) {
       pagination={{ clickable: true }}>
       {props.images.map((image: IItemImage) => (
         <SwiperSlide key={image.id}>
-          <img src={props.baseUrl + image.attributes.url} alt={image.attributes.alternativeText} />
+          <img src={image.attributes.url} alt={image.attributes.alternativeText} />
         </SwiperSlide>
       ))}  
       </Swiper>
@@ -41,7 +40,7 @@ export default function ImageSwiper (props: IImageSwiperProps) {
       <Swiper slidesPerView={1} className="my-swiper--single-image">
       {props.images.map((image: IItemImage) => (
         <SwiperSlide key={image.id}>
-          <img src={props.baseUrl + image.attributes.url} alt={image.attributes.alternativeText} />
+          <img src={image.attributes.url} alt={image.attributes.alternativeText} />
         </SwiperSlide>
       ))}  
       </Swiper>

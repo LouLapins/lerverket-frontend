@@ -34,11 +34,8 @@ const ITEM = gql`
   }
 `;
 
-interface IArtworkDetailsProps {
-  baseUrl: string;
-}
 
-export default function ArtworkDetails(props: IArtworkDetailsProps) {
+export default function ArtworkDetails() {
   const { id } = useParams();
 
   const { loading, error, data } = useQuery(ITEM, {
@@ -58,7 +55,6 @@ export default function ArtworkDetails(props: IArtworkDetailsProps) {
           </Link>
           <div className="details__image">
             <ImageSwiper
-              baseUrl={props.baseUrl}
               images={data.item.data.attributes.images.data}
             ></ImageSwiper>
           </div>

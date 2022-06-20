@@ -29,11 +29,7 @@ const CONTACT = gql`
   }
 `;
 
-interface IContactProps {
-  baseUrl: string;
-}
-
-export default function Contact(props: IContactProps) {
+export default function Contact() {
   const { loading, error, data } = useQuery(CONTACT);
 
   if (loading) return <Loader />;
@@ -57,7 +53,6 @@ export default function Contact(props: IContactProps) {
           <img
             className="contact-image"
             src={
-              props.baseUrl +
               data.contact.data.attributes.image.data.attributes.url
             }
             alt={

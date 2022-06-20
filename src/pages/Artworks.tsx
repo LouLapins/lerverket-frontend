@@ -29,11 +29,7 @@ query GetItems {
   }
 `
 
-interface IArtworksProps {
-  baseUrl: string;
-}
-
-export function Artworks(props: IArtworksProps) {
+export function Artworks() {
     
   const { loading, error, data } = useQuery(ITEMS);
 
@@ -47,7 +43,7 @@ export function Artworks(props: IArtworksProps) {
     <div className='artworks-wrapper'>
     {data.items.data.map((item: IItem) => (
       <Link key={item.id} className='item-card link' to={`/konst/${item.id}`}>
-          <img className='item-card__image' src={props.baseUrl + item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
+          <img className='item-card__image' src={item.attributes.coverImage.data.attributes.formats.small.url} alt={item.attributes.coverImage.data.attributes.alternativeText} />
           <p className='item-title'><strong>{item.attributes.title}</strong>, {item.attributes.artist}, {item.attributes.year}</p>
        </Link>
     ))}
