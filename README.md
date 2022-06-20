@@ -3,6 +3,9 @@
 This is the frontend repo for my project Lerverket, built with React and Typescript.
 
 ****
+### Demo
+This is the demo: https://lerverket.netlify.app/
+
 ### Run locally
 To run locally, clone repo.
 
