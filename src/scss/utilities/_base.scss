@@ -81,5 +81,19 @@ a {
 .loader {
     background-color: black;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 85px);
+    @include flex-center(row);
+    .loader-container {
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: space-around;
+        .loader-dot {
+            display: block;
+            width: .5rem;
+            height: .5rem;
+            background: white;
+            border-radius: 50%;
+        }
+    }
 }
