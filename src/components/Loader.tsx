@@ -1,28 +1,55 @@
-import React from 'react'
+import React from "react";
 import { motion } from "framer-motion";
 
-const loaderVariants = {
-    hidden: {
-      opacity: 0,
+const containerVariants = {
+  initial: {
+    transition: {
+      staggerChildren: 0.5,
     },
-    visible: {
-      opacity: 1,
-      transition: { duration: 1 },
+  },
+  animate: {
+    transition: {
+      staggerChildren: 0.5,
     },
-    exit: {
-      opacity: 0,
-      transition: { ease: "easeInOut" },
-    },
-  };
+  },
+};
+
+const dotVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+  },
+};
+
+const DotTransition = {
+  duration: 1,
+  repeat: Infinity,
+  ease: "anticipate",
+};
+
+const loaderDot = (
+  <motion.span
+    className="loader-dot"
+    variants={dotVariants}
+    transition={DotTransition}
+  />
+);
 
 export default function Loader() {
-    return (
-        <motion.div className='loader'
-        variants={loaderVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        >
-        </motion.div>
-    )
+  return (
+    <div className="loader">
+      <motion.div
+        className="loader-container"
+        variants={containerVariants}
+        initial="initial"
+        animate="animate"
+      >
+        {loaderDot}
+        {loaderDot}
+        {loaderDot}
+      </motion.div>
+    </div>
+  );
 }
