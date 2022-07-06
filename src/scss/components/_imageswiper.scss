@@ -5,7 +5,7 @@
 }
 
 .swiper-slide {
-    background: none;
+    background: black;
     @include flex-center(row);
 }
 
@@ -14,13 +14,8 @@
     --swiper-theme-color: white;
     .swiper-slide img {
         display: block;
-        width: 360px;
-        height: 460px;
+        @include swiper-image-size;
         object-fit: cover;
-        @include l-screen {
-            width: 560px;
-            height: 660px;
-        }
     }
 }
 

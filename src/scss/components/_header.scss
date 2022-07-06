@@ -6,8 +6,7 @@
     @include space-between(row);
     padding: 1.5rem;
     position: relative;
-    @include l-screen {
-        height: $header-height-l;
+    @include xxl-screen {
         padding: 50px 100px;
     }
 }
@@ -18,6 +17,10 @@
     color: $header-text-color;
     text-transform: uppercase;
     @include l-screen {
+        font-size: 30px;
+        margin-left: 2rem;
+    }
+    @include xl-screen {
         font-size: 40px;
     }
 }
@@ -69,7 +72,14 @@
     padding: 0;
     margin-bottom: 2rem;
     @include l-screen {
+        font-size: 14px;
         margin: 1rem 2rem;
+    }
+    @include xl-screen {
+        font-size: 16px;
+    }
+    @include xxl-screen {
+        font-size: 20px;
     }
 }
 

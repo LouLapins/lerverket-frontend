@@ -37,7 +37,7 @@ export default function Contact() {
 
   return (
     <PageAnimation>
-      <section className="article-page">
+      <section className="article-page contact-page">
         <h1 className="article-page-heading heading--big">
           {data.contact.data.attributes.title}
         </h1>

@@ -1,3 +1,7 @@
+.contact-page {
+    height: 100vh;
+}
+
 .contact__socials {
     margin: 2rem 0;
     @include l-screen {
@@ -7,7 +11,8 @@
 
 .contact-image {
     width: 100%;
-    @include l-screen {
+    object-fit: cover;
+    @include m-screen {
         width: 40%;
     }
 }

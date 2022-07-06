@@ -15,8 +15,14 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
+    @include l-screen {
+        font-size: 16px;
+    }
+    @include xxl-screen {
+        font-size: 18px;
+    }
 }
 
 a {
@@ -66,10 +72,12 @@ a {
 }
 
 .page {
-    @include page-settings;
     padding: 1.5rem;
     @include l-screen {
-        padding: 100px 100px;
+        padding: 3.5rem;
+    }
+    @include xxl-screen {
+        padding: 100px 132px;
     }
 }
 
