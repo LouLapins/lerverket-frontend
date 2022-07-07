@@ -1,4 +1,11 @@
 // MEDIA QUERIES
+// Extra small devices (Phones, 360px and up)
+@mixin xs-screen {
+    @media screen and(min-width: 360px) {
+        @content;
+    }
+}
+
 // Small devices (landscape phones, 576px and up)
 @mixin s-screen {
     @media screen and(min-width: 576px) {
@@ -23,6 +30,13 @@
 // Extra large devices (large desktops, 1200px and up)
 @mixin xl-screen {
     @media screen and(min-width: 1200px) {
+        @content;
+    }
+}
+
+// Extra large devices (large desktops, 1500px and up)
+@mixin xxl-screen {
+    @media screen and(min-width: 1500px) {
         @content;
     }
 }
@@ -67,7 +81,24 @@
     }
 }
 
-@mixin page-settings {
-    position: relative;
-    background-color: $background-color;
+@mixin swiper-image-size {
+    width: 360px;
+    height: 460px;
+    @include xl-screen {
+        width: 560px;
+        height: 660px;
+    }
+}
+
+@mixin header-x-padding {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    @include l-screen {
+        padding-right: 3.5rem;
+        padding-left: 3.5rem;
+    }
+    @include xxl-screen {
+        padding-right: 3.5rem;
+        padding-left: 3.5rem;
+    }
 }
