@@ -31,9 +31,9 @@ const CATEGORIES = gql`
 export default function NavLinks() {
   const { loading, error, data } = useQuery(CATEGORIES);
 
-  if (loading) return <div className="nav__items__wrapper"></div>;
+  if (loading) return <div className="nav__items__wrapper">Loading menu...</div>;
 
-  if (error) return <p>Error!</p>;
+  if (error) return <div className="nav__items__wrapper">Couldn't fetch menu. Please refresh the page.</div>;
 
   return (
     <div className="nav__items__wrapper">
